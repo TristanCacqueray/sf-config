@@ -1,0 +1,20 @@
+# This file is managed by ansible, do not edit directly
+---
+- tenant:
+    name: 'local'
+    source:
+      github.com:
+        config-projects:
+          - TristanAlt/sf-config
+        untrusted-projects:
+          - TristanAlt/sf-jobs
+
+- tenant:
+    name: 'local'
+    source:
+      local-git:
+        untrusted-projects:
+          - zuul-jobs:
+              include:
+                - job
+              shadow: TristanAlt/sf-jobs
